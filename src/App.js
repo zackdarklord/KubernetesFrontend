@@ -41,8 +41,9 @@ const App = () => {
   };
 
   return (
+    <div className="app-container">
     <div className="container">
-      <h1>Namespaces</h1>
+      <h1 className="blue-heading">Namespaces</h1>
       <ul className="list-group zoom-effect">
         {namespaces.map(namespace => (
           <li key={namespace} className="list-group-item d-flex justify-content-between align-items-center zoom-effect">
@@ -52,7 +53,7 @@ const App = () => {
         ))}
       </ul>
 
-      <h1>Releases</h1>
+      <h1 className="blue-heading">Releases</h1>
       {selectedNamespace && (
         <div className="namespace-releases zoom-effect">
           <h3>Releases for Namespace: {selectedNamespace}</h3>
@@ -69,7 +70,7 @@ const App = () => {
         </div>
       )}
 
-      <h1>All Releases</h1>
+      <h1 className="blue-heading">All Releases</h1>
       <ul className="list-group">
         {releases.map(release => (
           <li
@@ -84,6 +85,8 @@ const App = () => {
         ))}
       </ul>
     </div>
+    </div>
+    
   );
 };
 

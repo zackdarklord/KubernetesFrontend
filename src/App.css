@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -22,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
@@ -42,4 +44,13 @@
 
 .zoom-effect:hover {
   transform: scale(1.1);
+}
+.blue-heading {
+  color: rgb(255, 255, 255);
+}
+.app-container {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/009/362/398/original/blue-dynamic-shape-abstract-background-suitable-for-web-and-mobile-app-backgrounds-eps-10-vector.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
