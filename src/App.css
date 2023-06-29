@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+.zoom-effect {
+  transition: transform 0.3s;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
