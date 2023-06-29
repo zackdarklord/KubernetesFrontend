@@ -38,10 +38,24 @@ const App = () => {
       .catch(error => {
         console.error(`Failed to fetch releases for namespace ${namespace}:`, error);
       });
-  };
-
+     };
+     const restartDeployment = (namespace, deploymentName) => {
+      axios.post(`http://localhost:8082/api/kubernetes/${deploymentName}/${namespace}/restart`)
+        .then(response => {
+          console.log(response.data);
+          // Refresh the releases for the current namespace
+          getReleasesByNamespace(selectedNamespace);
+        })
+        .catch(error => {
+          console.error(`Failed to restart deployment ${deploymentName} in namespace ${namespace}:`, error);
+        });
+    };
+   
   return (
     <div className="app-container">
+      <button className="btn btn-primary" onClick={() => restartDeployment(null, null)}>
+              Restart the App
+            </button>
     <div className="container">
       <h1 className="blue-heading">Namespaces</h1>
       <ul className="list-group zoom-effect">
@@ -78,9 +92,7 @@ const App = () => {
             className="list-group-item d-flex justify-content-between align-items-center zoom-effect"
           >
             {release}
-            <button className="btn btn-primary" onClick={() => {}}>
-              Restart
-            </button>
+            
           </li>
         ))}
       </ul>
